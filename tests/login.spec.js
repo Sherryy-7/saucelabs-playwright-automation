@@ -1,5 +1,7 @@
 const {test, expect} = require('@playwright/test');
 const {LoginPage} = require('../pages/LoginPage');
+const users =require('../data/users');
+const constants = require('../data/constants');
 
 let loginPage;
 
@@ -12,9 +14,9 @@ test.beforeEach(async ({ page }) => {
 //test case :1 Login Scenario
 test('User can login with valid credentials @smoke', async ({ page }) => {
  
-  await page.getByPlaceholder('Username').fill('standard_user');
-  await page.getByPlaceholder('Password').fill('secret_sauce');
+  await page.getByPlaceholder('Username').fill(users.standardUser.username);
+  await page.getByPlaceholder('Password').fill(users.standardUser.password);
   await page.getByRole('button', { name: 'Login' }).click();
-  await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
-  await expect(page.getByText('Products')).toBeVisible();
+  await expect(page).toHaveURL(constants.urls.inventory);
+  await expect(page.getByText(constants.texts.productTitle)).toBeVisible();
 });
