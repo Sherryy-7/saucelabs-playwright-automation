@@ -21,6 +21,5 @@ async login(username, password){
 
 }
 
-
 }
 module.exports = {LoginPage};
