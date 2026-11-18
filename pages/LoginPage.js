@@ -1,3 +1,4 @@
+const { expect } = require('@playwright/test');
 class LoginPage{
     constructor(page) {
         this.page = page;
@@ -9,7 +10,7 @@ class LoginPage{
         this.loginButton = page.getByRole('button', { name: 'Login' }); 
 }
 async open(){
-    console.log('Base URL is: ${this.baseURL}');
+    console.log(`Base URL is: ${this.baseURL}`);
     await this.page.goto(this.baseURL);
 console.log('Landing Page Successfully opened');
 }
@@ -18,7 +19,7 @@ async login(username, password){
     await this.passwordInput.fill(password);
     await this.loginButton.click();
 
-
+ await expect(this.page).toHaveURL(/inventory.html/);
 }
 
 }
