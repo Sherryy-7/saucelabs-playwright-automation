@@ -9,6 +9,13 @@ urls: {
     yourCart: 'Your Cart',
     sauceLabsBackpackText: 'Sauce Labs Backpack',
     sauceLabsBikeLightText: 'Sauce Labs Bike Light'
+  },
+  sortOptions: {  
+    nameAsc: 'az',
+    nameDesc: 'za',
+    priceLowtoHight: 'lohi',
+    priceHighttoLow: 'hilo' 
+
   }
 
 }

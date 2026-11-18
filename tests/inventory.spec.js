@@ -26,3 +26,13 @@ await  inventory.addProductToCart(constant.texts.sauceLabsBikeLightText);
 const cartCount = await inventory.getCartCount();
 expect (cartCount).toBe(2);
 })
+
+test('products can be sorted from low to high', async({page}) =>{
+
+   inventory.sortBy(constant.sortOptions.priceLowtoHight);// click on sort option
+    const prices = await inventory.getAllProductPrices(); // get all product prices
+    const sortedPrices = [...prices].sort((a, b) => a - b); // sort the prices in ascending order
+    expect(prices).toEqual(sortedPrices); // compare the original prices with the sorted prices
+
+    
+});
