@@ -4,6 +4,8 @@ const {LoginPage} = require('../pages/LoginPage');
 
 const {Inventory} = require('../pages/Inventory');
 const constant = require ('../data/constants');
+const users =require('../data/users');
+
 
 /** @type {LoginPage} */
 let loginPage;
@@ -15,7 +17,7 @@ test.beforeEach(async ({ page }) => {
      loginPage = new LoginPage(page);
      inventory = new Inventory(page);
       await loginPage.open();
-      await loginPage.login('standard_user', 'secret_sauce');
+      await loginPage.login(users.standardUser.username, users.standardUser.password);
 
 
 })

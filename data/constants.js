@@ -2,7 +2,9 @@ module.exports = {
 urls: {
     login: '/',
     inventory: '/inventory.html',
-    cart: '/cart.html'  
+    cart: '/cart.html'  ,
+    checkoutStepTwo: '/checkout-step-two.html',
+    ThankYouPageUrl: '/checkout-complete.html'
   },
   texts: {
     productTitle: 'Products',
@@ -16,6 +18,11 @@ urls: {
     priceLowtoHight: 'lohi',
     priceHighttoLow: 'hilo' 
 
+  },
+  checkOutData: {
+    firstName: 'John',
+    lastName: 'Doe',
+    postalCode: '12345'
   }
 
 }
