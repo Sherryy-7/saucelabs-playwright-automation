@@ -5,9 +5,8 @@ class Cart {
     this.cartLink = page.locator('.shopping_cart_link');
 
     // Poora item (container) - Remove button isi ke andar hota hai
-    this.cartItem = page.locator('[data-test="inventory-item"]');
-    // Sirf product ka naam
-    this.itemNames = page.locator('[data-test="inventory-item-name"]');
+   this.cartItem = page.locator('.cart_item');
+this.itemNames = this.cartItem.locator('.inventory_item_name');
 
     this.checkOutButton = page.locator('[data-test="checkout"]');
     this.firstNameInput = page.locator('[data-test="firstName"]');
@@ -30,7 +29,7 @@ class Cart {
 
   async getAllCartNames() {
     return await this.itemNames.allTextContents();
-  }
+}
 
   getCartItemByName(productName) {
     return this.cartItem.filter({ hasText: productName });
